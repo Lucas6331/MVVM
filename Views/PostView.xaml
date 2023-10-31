@@ -5,7 +5,7 @@
              Title="PostView">
     <VerticalStackLayout>
         <Label 
-            Text="{Binding Post.UserId}"
+            Text="{Binding Post.UserId}" 
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM_API_SampleProject.Views.TodoView"
+             Title="TodoView">
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding Todo.userId}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="{Binding  Todo.id}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="{Binding  Todo.title}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <CheckBox x:Name="checkBox" />
+        <Label Text="{Binding  Todo.completed}">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}"
+                     Value="true">
+                    <Setter Property="FontAttributes"
+                    Value="Italic, Bold" />
+                    <Setter Property="FontSize"
+                    Value="18" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+    </VerticalStackLayout>
+</ContentPage>
